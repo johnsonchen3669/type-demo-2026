@@ -1,6 +1,6 @@
 # Pizza Lab｜Day27
 
-Astro 提供頁面，TypeScript 模組負責資料與操作。本分支進度為 Day27；`day-27` 到 `day-30` 逐日累積功能，`main` 是最後版本。
+Astro 提供頁面，TypeScript 模組負責資料與操作。本分支進度為 Day27；`day-27` 到 `day-30` 逐日累積功能，`main` 隨每日進度累積更新：目前與 `day-27` 相同，完成 Day28 後會包含 Day27＋Day28。
 
 使用 Node.js 24，在專案根目錄執行：
 
@@ -17,7 +17,7 @@ npm test
 npm run build
 ```
 
-`typecheck` 同時檢查 Astro 頁面與 TS 模組；測試用 Vitest 執行。Astro 頁面檢查使用工具支援的 TypeScript 6；純 TS 模組另外使用 TypeScript 7 檢查。所有模型回應與工具要求都是固定模擬資料，不需要金鑰，不會呼叫 AI API。任意自然語句超出案例範圍時會顯示提示。
+`typecheck` 同時檢查 Astro 頁面與 TS 模組；測試用 Vitest 執行。Astro 頁面檢查使用工具支援的 TypeScript 6；純 TS 模組另外使用 TypeScript 7 檢查。Day27 先處理表單輸入與驗證，不需要金鑰，也不會呼叫 AI API。
 
 | 分支 | 本日新增 |
 |---|---|
