@@ -1,0 +1,23 @@
+{
+  "name": "pizza-lab",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "typecheck": "astro check && node node_modules/typescript-7/bin/tsc --noEmit -p tsconfig.modules.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "astro": "7.3.8",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@types/node": "^24.0.0",
+    "typescript": "6.0.3",
+    "vitest": "4.1.11",
+    "typescript-7": "npm:typescript@7.0.2"
+  }
+}
