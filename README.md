@@ -1,15 +1,26 @@
-# Pizza Lab｜Day27
+# Pizza Lab｜Day 28
 
-Astro 提供頁面，TypeScript 模組負責資料與操作。本分支進度為 Day27；`day-27` 到 `day-30` 逐日累積功能，`main` 隨每日進度累積更新：目前與 `day-27` 相同，完成 Day28 後會包含 Day27＋Day28。
+Astro 提供操作頁面，TypeScript 模組負責資料規則、查詢與結果。這份範例搭配 Day 27～30 的 AI 協作開發文章；AI 用來協助寫程式，網站本身不呼叫模型。
 
-使用 Node.js 24，在專案根目錄執行：
+| 分支 | 本日重點 |
+|---|---|
+| day-27 | 審查輸入驗證與需求落差 |
+| day-28 | 明確的資料契約、實作與測試 Prompt |
+| day-29 | 沿用型別增加菜單查詢與摘要計算 |
+| day-30 | 表單、驗證、摘要與確認流程的整合驗收 |
+
+各分支保留當天的版本；`main` 目前與 `day-27` 相同，後續依每日進度更新。
+
+## 執行
+
+使用 Node.js 24。先保存自己的修改，再切換 `git switch day-28`，執行：
 
 ```sh
 npm ci
 npm run dev
 ```
 
-開啟終端機顯示的本機網址（預設 http://localhost:4321）。
+開啟終端機顯示的本機網址，預設為 http://localhost:4321。
 
 ```sh
 npm run typecheck
@@ -17,15 +28,12 @@ npm test
 npm run build
 ```
 
-`typecheck` 同時檢查 Astro 頁面與 TS 模組；測試用 Vitest 執行。Astro 頁面檢查使用工具支援的 TypeScript 6；純 TS 模組另外使用 TypeScript 7 檢查。Day27 先處理表單輸入與驗證，不需要金鑰，也不會呼叫 AI API。
+Astro 頁面依工具使用 TypeScript 6，純 TS 模組另用 TypeScript 7 檢查。Vitest 檢查資料規則與函式結果。安裝版本由 package-lock.json 固定。
 
-| 分支 | 本日新增 |
-|---|---|
-| day-27 | 表單輸入、Zod 驗證、Vitest 案例 |
-| day-28 | 模擬結構化草稿與成功／失敗結果 |
-| day-29 | 模擬工具要求、固定菜單查詢與結果對應 |
-| day-30 | 草稿、菜單與購物車摘要的整合與測試 |
+## 操作與開發
 
-切換進度：`git switch day-27`（請先保存自己的修改），再執行 `npm ci`。
+選擇餐點、數量與備註後按「檢查這份選擇」。數量需是 1～10 的整數，文字會去除前後空白。
 
-主要程式位於 `src/lib/`，畫面事件放在 `src/client.ts`，頁面在 `src/pages/index.astro`。本日可修改數量，觀察成功資料與欄位錯誤。這是教學範例，購物車只在本次頁面中呈現，不會送出訂單或付款。
+[AI 協作開發說明](docs/ai-development.md)提供實作、測試與修正 Prompt。資料模組在 src/lib/，畫面事件在 src/client.ts，操作頁面在 src/pages/index.astro。
+
+這是本頁操作範例，不送出訂單、不付款，也不保存跨頁購物車。

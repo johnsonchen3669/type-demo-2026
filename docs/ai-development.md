@@ -1,0 +1,32 @@
+# Day 28｜請 AI 照規格實作
+
+## 實作 Prompt
+
+```text
+請用 TypeScript 與 Zod 實作 Pizza 購物車輸入驗證。
+必要欄位：pizzaId 是字串、quantity 是整數、note 是字串。
+CartSchema 描述基本欄位；CartDraft 從 z.infer 取得。
+validateCart(raw: unknown) 先驗證，再去除字串前後空白。
+餐點編號不能空白，數量必須介於 1～10。
+成功回傳 { ok: true, cart }；失敗回傳 { ok: false, errors: string[] }。
+保留上述匯出名稱與結構，先做資料模組，再接表單。
+```
+
+## 測試 Prompt
+
+```text
+用 Vitest 檢查有效資料、1 與 10、0、11、小數、字串數量、
+缺少各必要欄位、錯誤型別與空白餐點編號。
+確認成功結果保留數量並去除字串前後空白，失敗提供非空的錯誤提示，且不能帶有成功的 cart。
+依需求決定預期結果，執行測試與型別檢查並回報實際結果。
+環境無法執行時，請明確說明。
+```
+
+## 修正 Prompt
+
+```text
+數量欄位要接收 number，字串 "2" 應驗證失敗。
+請保留 CartDraft 與 ValidationResult 的契約，修正輸入處理，
+補上字串數量的回歸案例，再跑型別檢查與測試。
+表單使用 valueAsNumber 取得數量，資料模組不自動轉換字串。
+```
