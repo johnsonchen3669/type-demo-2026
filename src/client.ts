@@ -16,3 +16,5 @@ form?.addEventListener("submit", (event) => {
   status.textContent = result.ok ? "這份選擇可以繼續使用。" : "請調整輸入內容。";
   output.textContent = JSON.stringify(result, null, 2);
 });
+
+import "./menu-client";

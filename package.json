@@ -7,7 +7,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "typecheck": "astro check && node node_modules/typescript-7/bin/tsc --noEmit -p tsconfig.modules.json",
-    "test": "vitest run"
+    "test": "vitest run",
+    "lint": "eslint src"
   },
   "dependencies": {
     "astro": "7.3.8",
@@ -18,6 +19,8 @@
     "@types/node": "^24.0.0",
     "typescript": "6.0.3",
     "vitest": "4.1.11",
-    "typescript-7": "npm:typescript@7.0.2"
+    "typescript-7": "npm:typescript@7.0.2",
+    "eslint": "10.12.0",
+    "typescript-eslint": "8.71.1"
   }
 }
